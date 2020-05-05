@@ -3,9 +3,11 @@ var showResults = function (tweets) {
   tweets.forEach((tweet) => {
     var row = '<tr>';
 
-    row += '<td>' + tweet.user + '</td>';
-    row += '<td>' + tweet.tweet + '</td>';
-    row += '<td>' + tweet.normalizedSentimentScore + '</td>';
+    row += '<td>' +
+        '<img class="results__avatar" src="' + tweet.avatar + '" alt="'+ tweet.user +'">'
+      '</td>';
+    row += '<td class="results__tweet"><strong>' + tweet.user + '</strong>: ' + tweet.tweet + '</td>';
+    row += '<td class="results__score">' + tweet.normalizedSentimentScore.toFixed(1) + '</td>';
 
     row += '</tr>';
     $results.innerHTML += row;

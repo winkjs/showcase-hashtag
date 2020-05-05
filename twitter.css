@@ -1,0 +1,29 @@
+.results {
+  vertical-align: bottom;
+}
+
+.results td,
+.results tr {
+  margin: 0;
+  padding: 0;
+}
+
+.results td {
+  padding-bottom: 40px;
+}
+
+.results__avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 48px;
+  margin: 8px;
+}
+
+.results__tweet {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.results__score {
+  font-size: 48px;
+}
