@@ -31,8 +31,12 @@ h1 {
   border-radius: 10px;
 }
 
+.results-container {
+  margin-top: 48px;
+}
+
 .results {
-  vertical-align: bottom;
+  vertical-align: top;
 }
 
 td,
@@ -42,7 +46,7 @@ tr {
 }
 
 td {
-  padding-bottom: 40px;
+  padding-bottom: 48px;
 }
 
 .results__avatar {
