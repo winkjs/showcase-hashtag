@@ -1,6 +1,11 @@
 var showResults = function (tweets) {
   var $results = document.getElementById('results');
   $results.innerHTML = '';
+
+  if (tweets.length === 0) {
+    $results.innerHTML = '<center>No tweets on this hashtag! Please try another one.</center>';
+  }
+
   tweets.forEach((tweet) => {
     var row = '<tr>';
     var cssClass = (tweet.normalizedSentimentScore > 0 ) ? 'results__score--positive' : 'results__score--negative';
