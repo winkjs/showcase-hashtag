@@ -2,13 +2,13 @@
   vertical-align: bottom;
 }
 
-.results td,
-.results tr {
+td,
+tr {
   margin: 0;
   padding: 0;
 }
 
-.results td {
+td {
   padding-bottom: 40px;
 }
 
@@ -25,5 +25,24 @@
 }
 
 .results__score {
-  font-size: 48px;
+  display: block;
+  box-sizing: border-box;
+  background: #3366cc;
+  color: #fff;
+  height: 88px;
+  width: 88px;
+  border-radius: 100%;
+  text-align: center;
+  font-family: monospace;
+  letter-spacing: -4px;
+  font-size: 32px;
+  line-height: 88px;
+}
+
+.results__score--positive {
+  background: #00af89;
+}
+
+.results__score--negative {
+  background: #dd3333;
 }
