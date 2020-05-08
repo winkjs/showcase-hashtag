@@ -24,18 +24,30 @@ var getSentiment = function (hashtag) {
       return res.json();
     }).then(function (d) {
       console.log(d);
+      resetUI();
       showResults(d.tweets);
     })
 }
 
+var resetUI = function () {
+  $('#analyze-button').prop('value', 'Analyze Sentiment');
+  $('.lds-ripple').hide();
+}
+
 $(function () {
   $('#analyze-button').on('click', function () {
+    // Check input string
     var hashtag = $('#hashtag')[0].value;
     if (hashtag[0] === '#' ) {
       hashtag = hashtag.substr(1)
     }
     if (hashtag.trim() === '' ) return false;
 
+    // UI changes
+    $('#analyze-button').prop('value', 'Analyzing…');
+    $('.lds-ripple').show();
+
+    // Make API call
     getSentiment(hashtag);
   });
 })
