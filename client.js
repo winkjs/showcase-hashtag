@@ -1,5 +1,6 @@
 var showResults = function (tweets) {
   var $results = document.getElementById('results');
+  $results.innerHTML = '';
   tweets.forEach((tweet) => {
     var row = '<tr>';
     var cssClass = (tweet.normalizedSentimentScore > 0 ) ? 'results__score--positive' : 'results__score--negative';
