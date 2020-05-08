@@ -30,8 +30,12 @@ var getSentiment = function (hashtag) {
 
 $(function () {
   $('#analyze-button').on('click', function () {
-    const hashtag = $('#hashtag')[0].value;
+    var hashtag = $('#hashtag')[0].value;
+    if (hashtag[0] === '#' ) {
+      hashtag = hashtag.substr(1)
+    }
     if (hashtag.trim() === '' ) return false;
+
     getSentiment(hashtag);
   });
 })
