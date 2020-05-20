@@ -10,7 +10,6 @@ var showResults = function (tweets) {
     var row = '<tr>';
     var cssClass = (tweet.normalizedSentimentScore > 0 ) ? 'results__score--positive' : 'results__score--negative';
     cssClass = (tweet.normalizedSentimentScore === 0 ) ? '':cssClass;
-    console.log(cssClass);
 
     row += '<td>' +
         '<img class="results__avatar" src="' + tweet.avatar + '" alt="'+ tweet.user +'">'
@@ -25,11 +24,10 @@ var showResults = function (tweets) {
 }
 
 var getSentiment = function (hashtag) {
-  fetch('https://showcase-serverless.now.sh/twitter-sentiment?hashtag='+hashtag)
+  fetch('http://showcase-serverless.herokuapp.com/twitter-sentiment?hashtag='+hashtag)
     .then(function (res) {
       return res.json();
     }).then(function (d) {
-      console.log(d);
       resetUI();
       showResults(d.tweets);
     })
