@@ -8,14 +8,14 @@ var showResults = function (tweets) {
 
   tweets.forEach((tweet) => {
     var row = '<tr>';
-    var cssClass = (tweet.normalizedSentimentScore > 0 ) ? 'results__score--positive' : 'results__score--negative';
-    cssClass = (tweet.normalizedSentimentScore === 0 ) ? '':cssClass;
+    var cssClass = (tweet.sentiment > 0 ) ? 'results__score--positive' : 'results__score--negative';
+    cssClass = (tweet.sentiment === 0 ) ? '':cssClass;
 
     row += '<td>' +
         '<img class="results__avatar" src="' + tweet.avatar + '" alt="'+ tweet.user +'">'
       '</td>';
     row += '<td class="results__tweet"><strong>' + tweet.user + '</strong>: ' + tweet.tweet + '</td>';
-    row += '<td class="results__score '+ cssClass + '">' + tweet.normalizedSentimentScore.toFixed(1) + '</td>';
+    row += '<td class="results__score '+ cssClass + '">' + tweet.sentiment.toFixed(1) + '</td>';
 
     row += '</tr>';
     $results.innerHTML += row;
