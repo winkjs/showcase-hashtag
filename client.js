@@ -24,7 +24,7 @@ var showResults = function (tweets) {
 }
 
 var getSentiment = function (hashtag) {
-  fetch('http://showcase-serverless.herokuapp.com/twitter-sentiment?hashtag='+hashtag)
+  fetch('https://showcase-serverless.herokuapp.com/twitter-sentiment?hashtag='+hashtag)
     .then(function (res) {
       return res.json();
     }).then(function (d) {
