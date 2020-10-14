@@ -38,7 +38,22 @@ var resetUI = function () {
   $('.lds-ripple').hide();
 }
 
+var loadHashtag = function (hashtag) {
+  // Form changes
+  $('#hashtag').prop('value',hashtag)
+
+  // UI changes
+  $('#analyze-button').prop('value', 'Analyzing…');
+  $('.lds-ripple').show();
+
+  // Make API call
+  getSentiment(hashtag);
+}
+
 $(function () {
+  // Warming up the server for the user's request
+  fetch('https://showcase-serverless.herokuapp.com/twitter-sentiment?hashtag=winkJS')
+
   $('#analyze-button').on('click', function () {
     // Check input string
     var hashtag = $('#hashtag')[0].value;
@@ -47,11 +62,11 @@ $(function () {
     }
     if (hashtag.trim() === '' ) return false;
 
-    // UI changes
-    $('#analyze-button').prop('value', 'Analyzing…');
-    $('.lds-ripple').show();
-
-    // Make API call
-    getSentiment(hashtag);
+    loadHashtag(hashtag)
   });
+
+  $(document).on('click','.js-article-ex',function () {
+    var title = $(this).text();
+    loadHashtag(title);
+  })
 })

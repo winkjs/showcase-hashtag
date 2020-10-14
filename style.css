@@ -56,6 +56,10 @@ main {
   margin-bottom: 88px;
 }
 
+.explanation-text {
+  text-align: center;
+}
+
 footer {
   min-height: 60px;
   font-size: 14px;
