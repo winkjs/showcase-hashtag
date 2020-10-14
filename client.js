@@ -15,7 +15,7 @@ var showResults = function (tweets) {
         '<img class="results__avatar" src="' + tweet.avatar + '" alt="'+ tweet.user +'">'
       '</td>';
     row += '<td class="results__tweet"><strong>' + tweet.user + '</strong>: ' + tweet.tweet + '</td>';
-    row += '<td class="results__score '+ cssClass + '">' + tweet.sentiment.toFixed(1) + '</td>';
+    row += '<td class="results__score '+ cssClass + '">' + tweet.sentiment.toFixed(1) * 10 + '</td>';
 
     row += '</tr>';
     $results.innerHTML += row;
