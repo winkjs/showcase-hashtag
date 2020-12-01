@@ -9,7 +9,7 @@
 This demo takes a Twitter hashtag and calculates the sentiments of the top tweets on that hashtag. It does this by using the [`out`](https://winkjs.org/wink-nlp/leveraging-out.html) method in [winkNLP](https://github.com/winkjs/wink-nlp). It loads the tweet by using `readDoc` and then outputs `its.sentiment`.
 
 ### How to build this
-[<img align="right" src="https://user-images.githubusercontent.com/9491/100742427-c97d2b80-3400-11eb-925b-2c4b111f2722.png" width="220px" >](https://winkjs.org/showcase-timeline/)
+[<img align="right" src="https://user-images.githubusercontent.com/9491/100742427-c97d2b80-3400-11eb-925b-2c4b111f2722.png" width="220px" >](https://winkjs.org/showcase-hashtag/)
 
 ```javascript
 const winkNLP = require('wink-nlp');
